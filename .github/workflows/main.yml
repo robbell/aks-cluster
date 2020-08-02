@@ -27,6 +27,9 @@ jobs:
       env:
         ACTION_PLAYBOOK_NAME: create-aks.yaml
         
+    - name: Install Azure Ansible
+      run: pip install ansible[azure]
+      
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
