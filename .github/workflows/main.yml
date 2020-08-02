@@ -26,3 +26,6 @@ jobs:
       uses: ansible/ansible-lint-action@v4.1.0.post0
       env:
         ACTION_PLAYBOOK_NAME: create-aks.yaml
+        
+    - name: Run Ansible Playbook
+      run: ansible-playbook create-aks.yaml
