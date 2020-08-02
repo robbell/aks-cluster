@@ -1,2 +1,3 @@
-# aks-cluster
-Creation of an AKS cluster using Ansible
+# AKS Cluster
+
+Creation of an AKS cluster using Ansible.
