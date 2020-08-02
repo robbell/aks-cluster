@@ -33,4 +33,5 @@ jobs:
         echo test, and deploy your project.
         
     - name: ansible-lint
-      uses: ansible/ansible-lint-action@v4.1.0.post0    
+      uses: ansible/ansible-lint-action@v4.1.0.post0
+      with: create-aks.yaml
