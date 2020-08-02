@@ -37,4 +37,4 @@ jobs:
         enable-AzPSSession: true 
             
     - name: Run Ansible Playbook
-      run: ansible-playbook create-aks.yaml -vvv
+      run: ansible-playbook create-aks.yaml -vvv --extra-vars "ssh_key=${{ secrets.SSH_KEY }} client_id=${{ secrets.CLIENT_ID }} client_secret=${{ secrets.CLIENT_SECRET }}"
