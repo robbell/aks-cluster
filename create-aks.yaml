@@ -6,9 +6,9 @@
     location: eastus
     aks_name: myAKSCluster
     username: azureuser
-    ssh_key: "To replace"
-    client_id: "To replace"
-    client_secret: "To replace"
+    ssh_key: ${{ secrets.SSH_KEY }}
+    client_id: ${{ secrets.CLIENT_ID }}
+    client_secret: ${{ secrets.CLIENT_SECRET }}
     aks_version: "1.17.7"
   tasks:
   - name: Create resource group
