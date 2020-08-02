@@ -37,4 +37,4 @@ jobs:
         enable-AzPSSession: true 
             
     - name: Run Ansible Playbook
-      run: ansible-playbook create-aks.yaml
+      run: ansible-playbook create-aks.yaml -vvv
