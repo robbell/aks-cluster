@@ -27,5 +27,11 @@ jobs:
       env:
         ACTION_PLAYBOOK_NAME: create-aks.yaml
         
+    - name: Login via Az module
+      uses: azure/login@v1.1
+      with:
+        creds: ${{secrets.AZ_CREDENTIALS}}
+        enable-AzPSSession: true 
+            
     - name: Run Ansible Playbook
       run: ansible-playbook create-aks.yaml
