@@ -34,7 +34,5 @@ jobs:
         
     - name: ansible-lint
       uses: ansible/ansible-lint-action@v4.1.0.post0
-      with:
-        targets: |
-          create-aks.yaml
-          delete-aks.yaml
+      env:
+        ACTION_PLAYBOOK_NAME: create-aks.yaml
