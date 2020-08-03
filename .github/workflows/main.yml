@@ -6,34 +6,24 @@ on:
     branches: [ master ]
 
 jobs:
-  checkout:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-  setup-ansible:
-    runs-on: ubuntu-latest
-    steps:        
+      
+    - name: ansible-lint
+      uses: ansible/ansible-lint-action@v4.1.0.post0
+      env:
+        ACTION_PLAYBOOK_NAME: create-aks.yaml
+        
     - name: Install Azure Ansible
       run: pip install ansible[azure]
-  setup-azure-cli:
-    runs-on: ubuntu-latest
-    steps:
+      
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
         creds: ${{secrets.AZ_CREDENTIALS}}
         enable-AzPSSession: true 
-  lint:
-    needs: checkout
-    runs-on: ubuntu-latest
-    steps:
-    - name: ansible-lint
-      uses: ansible/ansible-lint-action@v4.1.0.post0
-      env:
-        ACTION_PLAYBOOK_NAME: create-aks.yaml
-  provision:
-    needs: [checkout, setup-ansible, setup-azure-cli]
-    runs-on: ubuntu-latest
-    steps:             
+            
     - name: Run Ansible Playbook
       run: ansible-playbook create-aks.yaml -vvv --extra-vars "ssh_key='${{ secrets.SSH_KEY }}' client_id=${{ secrets.CLIENT_ID }} client_secret=${{ secrets.CLIENT_SECRET }}"
