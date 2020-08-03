@@ -2,15 +2,15 @@
   hosts: localhost
   connection: local
   vars:
-    resource_group: myResourceGroup
-    aks_name: myAKSCluster
+    resource_group: robbell-rg
+    aks_name: robbell-aks
   tasks:
-    - name: Create resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
     - name:
       azure_rm_aks:
         name: "{{ aks_name }}"
         resource_group: "{{ resource_group }}"
+        state: absent
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
         state: absent
