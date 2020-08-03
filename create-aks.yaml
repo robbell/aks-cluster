@@ -2,9 +2,9 @@
   hosts: localhost
   connection: local
   vars:
-    resource_group: myResourceGroup
+    resource_group: robbell-rg
     location: eastus
-    aks_name: myAKSCluster
+    aks_name: robbell-aks
     username: azureuser
     ssh_key: ${{ secrets.SSH_KEY }}
     client_id: ${{ secrets.CLIENT_ID }}
@@ -30,7 +30,7 @@
         client_secret: "{{ client_secret }}"
       agent_pool_profiles:
         - name: default
-          count: 1
-          vm_size: Standard_D2_v2
+          count: 2
+          vm_size: Standard_B2s
       tags:
         Environment: Production
