@@ -21,6 +21,7 @@
       location: "{{ location }}"
       resource_group: "{{ resource_group }}"
       dns_prefix: "{{ aks_name }}"
+      enable_rbac: yes
       kubernetes_version: "{{ aks_version }}"
       linux_profile:
         admin_username: "{{ username }}"
