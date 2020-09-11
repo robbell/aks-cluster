@@ -31,7 +31,7 @@
         client_secret: "{{ client_secret }}"
       agent_pool_profiles:
         - name: default
-          count: 2
+          count: 1
           vm_size: Standard_B2s
       tags:
         Environment: Production
