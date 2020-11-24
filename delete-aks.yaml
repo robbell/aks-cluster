@@ -5,7 +5,7 @@
     resource_group: robbell-rg
     aks_name: robbell-aks
   tasks:
-    - name:
+    - name: Delete resource group
       azure_rm_aks:
         name: "{{ aks_name }}"
         resource_group: "{{ resource_group }}"
