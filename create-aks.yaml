@@ -33,5 +33,6 @@
         - name: default
           count: 1
           vm_size: Standard_B2s
+          os_disk_size_gb: 32
       tags:
         Environment: Production
