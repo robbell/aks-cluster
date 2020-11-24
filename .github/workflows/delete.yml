@@ -10,11 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: ansible-lint
-      uses: ansible/ansible-lint-action@master
-      with:
-        targets: "delete-aks.yaml"
-        
+#     - name: ansible-lint
+#       uses: ansible/ansible-lint-action@master
+#       with:
+#         targets: "delete-aks.yaml"
+
     - name: Install Azure Ansible
       run: pip install ansible[azure]
       
