@@ -15,8 +15,11 @@ jobs:
 #       with:
 #         targets: "delete-aks.yaml"
 
-    - name: Force Install Ansible
-      run: pip install --force-reinstall ansible ansible-base ansible[azure]
+    - name: Uninstall Ansible 2.9
+      run: pip uninstall ansible
+
+    - name: Install Ansible 2.10
+      run: pip install ansible ansible[azure]
       
     - name: Login via Az module
       uses: azure/login@v1.1
