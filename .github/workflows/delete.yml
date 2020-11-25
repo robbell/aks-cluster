@@ -18,6 +18,9 @@ jobs:
 #     - name: Uninstall Ansible 2.9
 #       run: pip uninstall ansible
 
+    - name: Install setuptools
+      run: pip3 install setuptools
+
     - name: Install Ansible 2.10
       run: pip3 install ansible[azure]
       
