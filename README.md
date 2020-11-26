@@ -1,6 +1,6 @@
 # AKS Cluster
 
-![CI](https://github.com/robbell/aks-cluster/workflows/CI/badge.svg)
+![CI](https://github.com/robbell/aks-cluster/workflows/CI/badge.svg?branch=master)
 
 Creation of an AKS cluster using Ansible.
 
