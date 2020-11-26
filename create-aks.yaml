@@ -9,7 +9,7 @@
     ssh_key: ${{ secrets.SSH_KEY }}
     client_id: ${{ secrets.CLIENT_ID }}
     client_secret: ${{ secrets.CLIENT_SECRET }}
-    aks_version: "1.17.7"
+    aks_version: "1.18.10"
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
