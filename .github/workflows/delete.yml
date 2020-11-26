@@ -18,8 +18,14 @@ jobs:
 #     - name: Uninstall Ansible 2.9
 #       run: pip uninstall ansible
 
+
+    - name: Output status
+      run: |
+        python --version
+        pip --version
+
     - name: Install Ansible Azure
-      run: pip install 'ansible[azure]'
+      run: pip install setuptools 'ansible[azure]'
       
     - name: Login via Az module
       uses: azure/login@v1.1
