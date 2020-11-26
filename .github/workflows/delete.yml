@@ -9,20 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
-#     - name: ansible-lint
-#       uses: ansible/ansible-lint-action@master
-#       with:
-#         targets: "delete-aks.yaml"
-
-#     - name: Uninstall Ansible 2.9
-#       run: pip uninstall ansible
-
-
-    - name: Output status
-      run: |
-        python3 --version
-        pip3 --version
 
     - name: Install Ansible Azure
       run: |
