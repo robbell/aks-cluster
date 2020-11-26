@@ -25,7 +25,7 @@ jobs:
         pip3 --version
 
     - name: Install Ansible Azure
-      run: pip3 install 'ansible[azure]'
+      run: pip3 install setuptools 'ansible[azure]'
       
     - name: Login via Az module
       uses: azure/login@v1.1
