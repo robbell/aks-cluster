@@ -9,20 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
-#     - name: ansible-lint
-#       uses: ansible/ansible-lint-action@master
-#       with:
-#         targets: "delete-aks.yaml"
-
-#     - name: Uninstall Ansible 2.9
-#       run: pip uninstall ansible
 
     - name: Install Ansible Azure
       run: |
-        python -m pip install --upgrade pip setuptools
-        python3 -m pip install ansible==2.9.9
-        python3 -m pip install 'ansible[azure]' packaging msrestazure
+        pip install -U pip setuptools
+        pip install 'ansible[azure]'
       
     - name: Login via Az module
       uses: azure/login@v1.1
